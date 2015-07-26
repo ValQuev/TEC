@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/app_name">
+
+    <!--<PreferenceCategory android:title="@string/favoris" >
+        <CheckBoxPreference
+            android:key="prefProfileFav"
+            android:defaultValue="false"
+            android:title="@string/load_profile_fav"
+            android:summary="@string/load_profile_fav_summary" />
+    </PreferenceCategory>-->
+
+</PreferenceScreen>
