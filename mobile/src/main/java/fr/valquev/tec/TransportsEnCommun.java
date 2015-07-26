@@ -14,5 +14,7 @@ public class TransportsEnCommun extends AppCompatActivity {
         setContentView(R.layout.transports_en_commun);
 
         mContext = this;
+
+        if()
     }
 }
