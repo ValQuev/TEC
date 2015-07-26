@@ -1,12 +1,18 @@
-package fr.valquev.tec;
+package fr.valquev.tec.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import fr.valquev.tec.R;
+import fr.valquev.tec.Utils;
+import fr.valquev.tec.objects.Network;
 
 public class TransportsEnCommun extends AppCompatActivity {
 
     private Context mContext;
+    private Network network;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +21,12 @@ public class TransportsEnCommun extends AppCompatActivity {
 
         mContext = this;
 
-        if()
+        network = new Network(mContext);
+
+        if(network.isSet()) {
+            //TODO On lance l'appli
+        } else {
+            startActivity(new Intent(mContext, SelectNetwork.class));
+        }
     }
 }

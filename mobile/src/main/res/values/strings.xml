@@ -12,4 +12,6 @@
     <string name="about_thx">Remerciements</string>
     <string name="about_thxtext">Un grand merci à <a href="https://twitter.com/nioux59">Yan Maniez</a> sans qui cette appli n\'aurait pas vu le jour :)</string>
 
+    <string name="select_network">Réseau de transports</string>
+
 </resources>
