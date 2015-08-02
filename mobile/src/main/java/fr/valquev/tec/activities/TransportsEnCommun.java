@@ -14,6 +14,8 @@ public class TransportsEnCommun extends AppCompatActivity {
     private Context mContext;
     private Network network;
 
+    //TODO NavigationDrawer d'où on recherche le réseau de transports et Tabs pour les différentes fonctionnalités
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
