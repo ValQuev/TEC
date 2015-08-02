@@ -7,6 +7,11 @@ import fr.valquev.tec.Utils;
 
 public class Network {
 
+    public static final String PREF_NAME = "TransportsEnCommun";
+    public static final String PREF_NETWORK = "prefNetwork";
+
+    public static final String NETWORKS_URL = "http://192.168.1.78/~ValQuev/quevit.fr/applis/tec/citynetworks.php";
+
     private int id;
     private String ville;
     private String network;
@@ -17,11 +22,15 @@ public class Network {
     private SharedPreferences sp;
 
     public Network(Context context) {
-        sp = context.getSharedPreferences(Utils.PREF_NAME, Context.MODE_PRIVATE);
+        sp = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+    }
+
+    public void regist() {
+        //sp.edit().putString(Utils.PREF_NETWORK, this.toString()).apply();
     }
 
     public boolean isSet() {
-        return !sp.getString(Utils.PREF_NETWORK, "").equals("");
+        return !sp.getString(PREF_NETWORK, "").equals("");
     }
 
     public String getBase_url() {

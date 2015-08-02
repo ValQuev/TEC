@@ -18,8 +18,8 @@ public class NetworkList implements Iterable {
         NetworkList result = new NetworkList();
 
         for(Network network : networks) {
-            String toSearch = Utils.removeAccent(network.getVille() + network.getNetwork());
-            if(toSearch.toLowerCase().trim().contains(Utils.removeAccent(query).toLowerCase().trim())) {
+            String toSearch = Utils.stringNormalizer(network.getVille() + network.getNetwork());
+            if(toSearch.toLowerCase().trim().contains(Utils.stringNormalizer(query).toLowerCase().trim())) {
                 result.add(network);
             }
         }

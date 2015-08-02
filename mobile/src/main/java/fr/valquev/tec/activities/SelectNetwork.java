@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -28,7 +27,9 @@ public class SelectNetwork extends AppCompatActivity implements ISelectNetwork {
     private Context mContext;
     private SearchView searchView;
     private NetworkList networkList;
+    private NetworkList nwList;
     private RecyclerView list;
+    private SelectNetworkAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class SelectNetwork extends AppCompatActivity implements ISelectNetwork {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         list.setLayoutManager(llm);
 
-        Client.get(Utils.NETWORKS_URL, null, new JsonHttpResponseHandler() {
+        Client.get(Network.NETWORKS_URL, null, new JsonHttpResponseHandler() {
             @Override
             public void onStart() {
             }
@@ -55,29 +56,20 @@ public class SelectNetwork extends AppCompatActivity implements ISelectNetwork {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 networkList = new Gson().fromJson(response.toString(), NetworkList.class);
-
-                list.setAdapter(new SelectNetworkAdapter(mContext, networkList));
+                nwList = networkList;
+                adapter = new SelectNetworkAdapter(mContext, nwList);
+                list.setAdapter(adapter);
 
                 searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                     @Override
                     public boolean onQueryTextSubmit(String query) {
-                        if (!query.equals("")) {
-                            NetworkList result = networkList.search(query);
-                            list.setAdapter(new SelectNetworkAdapter(mContext, result));
-                        } else {
-                            list.setAdapter(new SelectNetworkAdapter(mContext, networkList));
-                        }
+                        refresh(query);
                         return false;
                     }
 
                     @Override
                     public boolean onQueryTextChange(String newText) {
-                        if (!newText.equals("")) {
-                            NetworkList result = networkList.search(newText);
-                            list.setAdapter(new SelectNetworkAdapter(mContext, result));
-                        } else {
-                            list.setAdapter(new SelectNetworkAdapter(mContext, networkList));
-                        }
+                        refresh(newText);
                         return false;
                     }
                 });
@@ -90,8 +82,17 @@ public class SelectNetwork extends AppCompatActivity implements ISelectNetwork {
         });
     }
 
+    private void refresh(String query) {
+        if (!query.equals("")) {
+            nwList = networkList.search(query);
+        } else {
+            nwList = networkList;
+        }
+        adapter.notifyDataSetChanged();
+    }
+
     @Override
     public void onClick(Network network) {
-        Toast.makeText(mContext, network.getVille() + " : " + network.getNetwork(), Toast.LENGTH_SHORT).show();
+        network.regist();
     }
 }
