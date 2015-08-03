@@ -3,6 +3,10 @@
 
     <string name="app_name">TEC</string>
     <string name="app_name_long">Transports En Commun</string>
+
+    <string name="open_drawer">Ouvrir le drawer</string>
+    <string name="close_drawer">Fermer le drawer</string>
+
     <string name="about_text">Merci d\'utiliser cette appli ! Si elle vous plaît, n\'hésitez pas à aller voir mes autres projet sur mon site.\r\nCette application est sans pub et développée sur mon temps libre, pour la garder en vie, n\'hésitez pas à me faire un ou plusieurs petit(s) don(s) ! :)</string>
     <string name="about_textplus">Comme vous pouvez le voir, quelques onglets (Favoris, Itinéraire et Paramètres) sont encore en constructions. J\'ai décidé de quand même publier l\'application car je ne vais pas pouvoir travailler dessus avant quelque temps et la partie la plus importante (Horaires) fonctionne parfaitement N\'oubliez pas de vérifier de temps en temps sur le Google Play Store si une mise à jour de l\'application est disponible ;)</string>
     <string name="visit_site">Mon site</string>

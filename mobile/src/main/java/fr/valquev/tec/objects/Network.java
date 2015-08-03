@@ -10,7 +10,7 @@ public class Network {
     public static final String PREF_NAME = "TransportsEnCommun";
     public static final String PREF_NETWORK = "prefNetwork";
 
-    public static final String NETWORKS_URL = "http://192.168.1.78/~ValQuev/quevit.fr/applis/tec/citynetworks.php";
+    public static final String NETWORKS_URL = "http://quevit.fr/applis/tec/citynetworks2.php";
 
     private int id;
     private String ville;

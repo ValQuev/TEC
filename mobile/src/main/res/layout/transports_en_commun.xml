@@ -5,16 +5,61 @@
     android:id="@+id/drawer_layout"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    tools:context=".TransportsEnCommun">
+    android:fitsSystemWindows="true"
+    tools:context=".activities.TransportsEnCommun">
 
-    <!--<include layout="@layout/transports_en_commun_content"/>
-
-    <android.support.design.widget.NavigationView
-        android:id="@+id/navigation"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/drawer_header"
-        app:menu="@menu/drawer_menu"/>-->
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:id="@+id/main_toolbar"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coucou"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:layout_gravity="left">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:orientation="vertical"
+            android:fitsSystemWindows="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:id="@+id/search_network_toolbar"
+                android:background="?attr/colorPrimary">
+
+                <android.support.v7.widget.SearchView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/search_network_searchview"
+                    android:queryHint="@string/select_network"/>
+
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:id="@+id/search_network_list" />
+
+        </android.support.design.widget.CoordinatorLayout>
+
+    </LinearLayout>
 
 </android.support.v4.widget.DrawerLayout>

@@ -22,8 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.SelectNetwork" />
-
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
         <!-- DEBUG -->
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAU4rjFi89g4U95KXf6lyPDrmXBMgAZPZk"/>

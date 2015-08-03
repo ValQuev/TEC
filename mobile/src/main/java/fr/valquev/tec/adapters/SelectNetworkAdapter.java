@@ -39,7 +39,7 @@ public class SelectNetworkAdapter extends RecyclerView.Adapter<SelectNetworkAdap
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callback.onClick(network);
+                callback.onNetworkSelected(network);
             }
         });
     }
@@ -47,6 +47,10 @@ public class SelectNetworkAdapter extends RecyclerView.Adapter<SelectNetworkAdap
     @Override
     public int getItemCount() {
         return networkList.size();
+    }
+
+    public void setNetworkList(NetworkList networkList) {
+        this.networkList = networkList;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
